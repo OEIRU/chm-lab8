@@ -17,8 +17,15 @@ int main()
 	//Параметры а и b из варианта
 	for (int n = 0; n < N; n++)
 	{
-		if (n >= 128 && n <= 255) Z[n].real(sin(fabs(pow(n - 128, 1.86)) / 128.0));
-		if (n >= 384 && n <= 447) Z[n].real(sin(fabs(pow(n - 128, 2.3)) / 128.0));
+		if (n >= 0 && n <= 99) Z[n].real(0);
+		if (n >= 100 && n <= 149) Z[n].real(1);
+		if (n >= 150 && n <= 199) Z[n].real(0);
+		if (n >= 200 && n <= 249) Z[n].real(1);
+		if (n >= 250 && n <= 299) Z[n].real(0);
+		if (n >= 300 && n <= 349) Z[n].real(1 + (0.1 * cos(200*3.14*n)) / 512.0);
+		if (n >= 350 && n <= 399) Z[n].real(0);
+		if (n >= 400 && n <= 449) Z[n].real(1 + (0.1 * cos(200*3.14*n)) / 512.0);  
+		if (n >= 450  && n <= 512) Z[n].real(0);
 	}
 
 	//Здесь менять базис. Complex_Shannon - Шеннон, Dobeshi - Добеши D6
