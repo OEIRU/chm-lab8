@@ -8,7 +8,7 @@ int main()
 	int N = 512;
 
 	//Здесь менять номер этапа
-	int Stage = 1;
+	int Stage = 4;
 
 	std::vector<std::complex<double>> Z(N), Koef_Psi, Koef_Fi;
 
@@ -29,7 +29,7 @@ int main()
 	}
 
 	//Здесь менять базис. Complex_Shannon - Шеннон, Dobeshi - Добеши D6
-	Com_Methods::Wavelet_Analysis Wavelet_Test(N, Com_Methods::Wavelet_Analysis::Basis_Type::Complex_Shannon);
+	Com_Methods::Wavelet_Analysis Wavelet_Test(N, Com_Methods::Wavelet_Analysis::Basis_Type::Dobeshi);
 
 	Wavelet_Test.Analysis_Phase(Stage, Z, Koef_Psi, Koef_Fi);
 
